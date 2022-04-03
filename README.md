@@ -1,14 +1,11 @@
 <div align="center">
 
-# Khue's Homelab
+# Dubass83's Homelab
 
 <!-- ANCHOR: introduction -->
 
-[![chat](https://img.shields.io/matrix/homelab:matrix.khuedoan.com?style=flat-square&logo=matrix&logoColor=white&label=chat)](https://matrix.to/#/#homelab:matrix.khuedoan.com)
-[![tag](https://img.shields.io/github/v/tag/khuedoan/homelab?style=flat-square&logo=semver&logoColor=white)](https://github.com/khuedoan/homelab/tags)
-[![document](https://img.shields.io/website?label=document&logo=gitbook&logoColor=white&style=flat-square&url=https%3A%2F%2Fhomelab.khuedoan.com)](https://homelab.khuedoan.com)
+[![tag](https://img.shields.io/github/v/tag/khuedoan/homelab?style=flat-square&logo=semver&logoColor=white)](https://github.com/dubass83/homelab/tags)
 [![license](https://img.shields.io/github/license/khuedoan/homelab?style=flat-square&logo=gnu&logoColor=white)](https://www.gnu.org/licenses/gpl-3.0.html)
-[![stars](https://img.shields.io/github/stars/khuedoan/homelab?logo=github&logoColor=white&color=gold&style=flat-square)](https://github.com/khuedoan/homelab)
 
 This project utilizes [Infrastructure as Code](https://en.wikipedia.org/wiki/Infrastructure_as_code) and [GitOps](https://www.weave.works/technologies/gitops) to automate provisioning, operating, and updating self-hosted services in my homelab.
 It can be used as a highly customizable framework to build your own homelab.
