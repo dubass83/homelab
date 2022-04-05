@@ -1,13 +1,13 @@
 FROM agners/archlinuxarm
 
 # Sort mirrors by speed
-RUN pacman --sync --refresh --noconfirm \
-        reflector \
-    && reflector \
-        --save /etc/pacman.d/mirrorlist \
-        --protocol https \
-        --latest 20 \
-        --sort rate
+# RUN pacman --sync --refresh --noconfirm \
+#         reflector \
+#     && reflector \
+#         --save /etc/pacman.d/mirrorlist \
+#         --protocol https \
+#         --latest 20 \
+#         --sort rate
 
 RUN pacman --sync --refresh --noconfirm \
         ansible \
