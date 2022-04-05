@@ -1,4 +1,4 @@
-FROM agners/archlinuxarm
+FROM menci/archlinuxarm:base-devel
 
 # Sort mirrors by speed
 # RUN pacman --sync --refresh --noconfirm \
