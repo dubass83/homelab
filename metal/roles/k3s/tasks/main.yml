@@ -23,7 +23,7 @@
     owner: root
     group: root
     mode: 0755
-  when: ansible_facts['ansible_machine'] == "x86_64"
+  when: ansible_machine == "x86_64"
 
 - name: Copy k3s binary to arm64 arch nodes
   copy:
@@ -32,7 +32,7 @@
     owner: root
     group: root
     mode: 0755
-  when: ansible_facts['ansible_machine'] == "aarch64"
+  when: ansible_machine == "aarch64"
 
 - name: Ensure config directories exist
   file:
