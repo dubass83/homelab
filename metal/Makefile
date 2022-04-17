@@ -2,15 +2,12 @@
 
 env ?= "prod"
 
-default: boot cluster
+default: pre-innstall cluster
 
-~/.ssh/id_ed25519:
-	ssh-keygen -t ed25519 -f "$@"
-
-boot: ~/.ssh/id_ed25519
+pre-install: 
 	ansible-playbook \
-		--inventory inventories/${env}.yml \
-		boot.yml
+		--inventory inventories/pre-install-${env}.yml \
+		pre-install.yml -k --ask-vault-pass
 
 cluster:
 	ansible-playbook \
