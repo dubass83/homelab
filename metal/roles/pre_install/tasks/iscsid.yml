@@ -1,0 +1,7 @@
+- name: Install iscsi
+  yum: name=iscsi-initiator-utils state=installed
+  tags: iscsid
+
+- name: Make sure iscsid is restarted
+  service: name=iscsid state=restarted enabled=yes
+  tags: iscsid

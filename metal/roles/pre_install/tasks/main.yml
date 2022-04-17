@@ -1,0 +1,5 @@
+---
+- include_tasks: disable-firewal-selinux.yml
+- include_tasks: add-user.yml
+- include_tasks: ntp.yml
+- include_tasks: iscsid.yml

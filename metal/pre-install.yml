@@ -1,0 +1,6 @@
+- name: Run pre-install
+  hosts: metal
+  gather_facts: false
+  roles:
+    - pre_install
+

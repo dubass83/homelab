@@ -1,0 +1,4 @@
+---
+- name: restart ssh
+  systemd: name=sshd state=restarted
+  ignore_errors: yes

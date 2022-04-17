@@ -1,0 +1,17 @@
+- name: set timezone "{{ timezone }}" 
+  shell: timedatectl set-timezone "{{ timezone }}" 
+
+- name: Install Chrony
+  yum: name=chrony state=installed
+
+- name: Make sure Chrony is started up
+  service: name=chronyd state=started enabled=yes
+
+
+- name: Copy over the Chrony configuration
+  template: src=./templates/chrony.j2 dest=/etc/chrony.conf
+  notify: 
+  - restart chrony
+
+- name: Sync hwclock
+  shell: hwclock -w
