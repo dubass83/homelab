@@ -2,7 +2,7 @@
 
 env ?= "prod"
 
-default: pre-install cluster
+default: cluster
 
 pre-install: 
 	ansible-playbook \
@@ -11,7 +11,7 @@ pre-install:
 
 cluster:
 	ansible-playbook \
-		--inventory inventories/${env}.yml -b \
+		--inventory inventories/${env}.yml -b -K -v \
 		cluster.yml
 
 console:
