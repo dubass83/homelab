@@ -15,3 +15,4 @@
 
 - name: Sync hwclock
   shell: hwclock -w
+  ignore_errors: yes
