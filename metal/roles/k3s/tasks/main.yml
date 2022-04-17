@@ -14,7 +14,7 @@
     dest: "{{ role_path }}/files/bin/k3s-arm64"
   delegate_to: localhost
   run_once: true
-  register: k3s-arm64_binary
+  register: k3s_arm64_binary
 
 - name: Copy k3s binary to amd64 arch nodes
   copy:
