@@ -11,7 +11,7 @@ pre-install:
 
 cluster:
 	ansible-playbook \
-		--inventory inventories/${env}.yml \
+		--inventory inventories/${env}.yml -b \
 		cluster.yml
 
 console:

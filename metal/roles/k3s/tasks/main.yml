@@ -1,4 +1,4 @@
-- name: Download k3s binary
+- name: Download k3s binary [amd64]
   get_url:
     url: https://github.com/k3s-io/k3s/releases/download/{{ k3s_version }}/k3s
     checksum: sha256:https://github.com/k3s-io/k3s/releases/download/{{ k3s_version }}/sha256sum-amd64.txt
@@ -7,13 +7,32 @@
   run_once: true
   register: k3s_binary
 
-- name: Copy k3s binary to nodes
+- name: Download k3s binary [arm64]
+  get_url:
+    url: https://github.com/k3s-io/k3s/releases/download/{{ k3s_version }}/k3s-arm64
+    checksum: sha256:https://github.com/k3s-io/k3s/releases/download/{{ k3s_version }}/sha256sum-arm64.txt
+    dest: "{{ role_path }}/files/bin/k3s-arm64"
+  delegate_to: localhost
+  run_once: true
+  register: k3s-arm64_binary
+
+- name: Copy k3s binary to amd64 arch nodes
   copy:
     src: bin/k3s
     dest: /usr/local/bin/k3s
     owner: root
     group: root
     mode: 0755
+  when: platform == "amd64"
+
+- name: Copy k3s binary to arm64 arch nodes
+  copy:
+    src: bin/k3s-arm64
+    dest: /usr/local/bin/k3s
+    owner: root
+    group: root
+    mode: 0755
+  when: platform == "arm64"
 
 - name: Ensure config directories exist
   file:
