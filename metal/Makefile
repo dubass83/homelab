@@ -2,7 +2,7 @@
 
 env ?= "prod"
 
-default: pre-innstall cluster
+default: pre-install cluster
 
 pre-install: 
 	ansible-playbook \
