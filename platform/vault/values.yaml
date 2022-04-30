@@ -17,3 +17,4 @@ vault:
             - *host
     dev:
       enabled: true  # TODO disable vault dev mode
+      devRootToken: "root"
