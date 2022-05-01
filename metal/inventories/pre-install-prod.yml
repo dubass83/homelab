@@ -1,8 +1,0 @@
-metal:
-  children:
-    masters:
-      hosts:
-        metal0: {ansible_host: 192.168.100.111, ansible_user: "root", mac: '00:e0:4c:68:11:d8' , disk: sdb, network_interface: enp1s0, arch: amd64}
-    workers:
-       hosts:
-         metal1: {ansible_host: 192.168.100.59, ansible_user: "root", mac: 'dc:a6:32:d3:8a:f4', disk: sda, network_interface: eth0, arch: arm64}

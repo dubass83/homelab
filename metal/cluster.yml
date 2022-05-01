@@ -1,8 +1,29 @@
-- name: Create Kubernetes cluster
-  hosts: metal
+- name: Create Kubernetes cluster -- prereqs
+  hosts: k3s_cluster
+  gather_facts: yes
+  become: yes
   roles:
-    - k3s
-    - automatic_upgrade
+    - role: prereq
+    - role: download
+    - role: raspberrypi
+
+- name: Create Kubernetes cluster -- master
+  hosts: master
+  become: yes
+  roles:
+    - role: k3s/master
+
+- name: Create Kubernetes cluster -- nodes
+  hosts: node
+  become: yes
+  roles:
+    - role: k3s/node
+
+# - name: Create Kubernetes cluster
+#   hosts: metal
+#   roles:
+#     - k3s
+#     # - automatic_upgrade
 
 - name: Create some basic config
   hosts: localhost
