@@ -86,7 +86,7 @@
 
 - name: Write Kubernetes config file with the correct cluster address
   copy:
-    content: "{{ kubeconfig_base64.content | b64decode | replace('127.0.0.1', hostvars[groups['master'][0]].ansible_host) }}"
+    content: "{{ kubeconfig_base64.content | b64decode | replace('127.0.0.1', {{ master_ip }}) }}"
     dest: "{{ playbook_dir }}/kubeconfig.yaml"
     mode: 0600
     owner: root
