@@ -1,7 +1,7 @@
 ---
 - include_tasks: add-user.yml
 
-- include_tasks: {{ item }}
+- include_tasks: "{{ item }}""
   with_items: 
   - "disable-firewal-selinux.yml"
   - "ntp.yml"
