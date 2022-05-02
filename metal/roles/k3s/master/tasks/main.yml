@@ -9,6 +9,12 @@
     group: root
     mode: 0644
 
+- name: Disable components using .skip files
+  file:
+    path: "/var/lib/rancher/k3s/server/manifests/{{ item }}.yaml.skip"
+    state: touch
+  with_items: "{{ k3s_server_config_disable }}"
+
 - name: Enable and check K3s service
   systemd:
     name: k3s
