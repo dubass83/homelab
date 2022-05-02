@@ -9,6 +9,14 @@
     group: root
     mode: 0644
 
+- name: Create a /var/lib/rancher/k3s/server/manifests directory if it does not exist
+  ansible.builtin.file:
+    path: /var/lib/rancher/k3s/server/manifests
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
 - name: Disable components using .skip files
   file:
     path: "/var/lib/rancher/k3s/server/manifests/{{ item }}.yaml.skip"
