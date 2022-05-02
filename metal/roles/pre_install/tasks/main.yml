@@ -1,5 +1,9 @@
 ---
-- include_tasks: disable-firewal-selinux.yml
 - include_tasks: add-user.yml
-- include_tasks: ntp.yml
-- include_tasks: iscsid.yml
+
+- include_tasks: {{ item }}
+  with_items: 
+  - "disable-firewal-selinux.yml"
+  - "ntp.yml"
+  - "iscsid.yml"
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'

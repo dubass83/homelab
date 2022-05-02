@@ -1,7 +1,6 @@
 - name: Add a new user named admin
   user:
     name: admin
-    groups: "wheel"
     shell: /bin/bash
     password: "{{ admin_password }}"
 
