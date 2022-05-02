@@ -14,7 +14,7 @@ cluster:
 
 clean:
 	ansible-playbook \
-		--inventory inventories/homelab/hosts.ini \
+		--inventory inventories/homelab/hosts.ini -b -K -v \
 		reset.yml
 
 console:
