@@ -5,7 +5,7 @@ default: cluster
 pre-install: 
 	ansible-playbook \
 		--inventory inventories/homelab/pre-hosts.ini \
-		pre-install.yml -k --ask-vault-pass
+		pre-install.yml -k -b --ask-vault-pass
 
 cluster:
 	ansible-playbook \
