@@ -89,6 +89,6 @@
     content: "{{ kubeconfig_base64.content | b64decode | replace('127.0.0.1', hostvars[groups['master'][0]]['ansible_host'] | default(groups['master'][0])) }}"
     dest: "{{ playbook_dir }}/kubeconfig.yaml"
     mode: 0600
-    owner: root
+    owner: dubass83
   delegate_to: localhost
   run_once: true
