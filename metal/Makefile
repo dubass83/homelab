@@ -9,7 +9,7 @@ pre-install:
 
 cluster:
 	ansible-playbook \
-		--inventory inventories/homelab/hosts.ini -b -K -vvv \
+		--inventory inventories/homelab/hosts.ini -b -K -v \
 		cluster.yml
 
 clean:

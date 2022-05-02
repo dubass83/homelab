@@ -61,7 +61,7 @@
 
 - name: Replace https://localhost:6443 by https://master-ip:6443
   command: >-
-    echo $PATH; k3s kubectl config set-cluster default
+    /usr/local/bin/k3s kubectl config set-cluster default
       --server=https://{{ master_ip }}:6443
       --kubeconfig ~{{ ansible_user }}/.kube/config
   changed_when: true
@@ -86,7 +86,7 @@
 
 - name: Write Kubernetes config file with the correct cluster address
   copy:
-    content: "{{ kubeconfig_base64.content | b64decode | replace('127.0.0.1', {{ master_ip }}) }}"
+    content: "{{ kubeconfig_base64.content | b64decode | replace('127.0.0.1', hostvars[groups['master'][0]]['ansible_host'] | default(groups['master'][0])) }}"
     dest: "{{ playbook_dir }}/kubeconfig.yaml"
     mode: 0600
     owner: root
