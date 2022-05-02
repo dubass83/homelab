@@ -6,4 +6,4 @@
   - "disable-firewal-selinux.yml"
   - "ntp.yml"
   - "iscsid.yml"
-  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+  when: ansible_distribution == 'Rocky' or ansible_os_family == 'RedHat'
