@@ -20,7 +20,7 @@ namespaces:
 	ansible-playbook namespaces.yml
 
 plan: .terraform.lock.hcl
-	terraform plan -var-file="terraform.tfvars"
+	terraform plan
 
 apply: .terraform.lock.hcl namespaces
-	terraform apply -auto-approve -var-file="terraform.tfvars"
+	terraform apply -auto-approve

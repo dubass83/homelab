@@ -13,4 +13,4 @@
     - name: Render environment file
       template:
         src: ./terraform.tfvars.j2
-        dest: ./terraform.tfvars
+        dest: ./terraform.auto.tfvars
