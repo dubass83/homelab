@@ -59,8 +59,8 @@ argo-cd:
   repoServer:
     metrics: *metrics
   redis:
-    image:
-      repository: bitnami/redis-exporter 
     metrics: *metrics
+      image:
+        repository: bitnami/redis-exporter 
   dex:
     metrics: *metrics
