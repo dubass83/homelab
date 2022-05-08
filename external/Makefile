@@ -13,7 +13,6 @@ terraform.tfvars:
 	ansible-playbook tfvars.yml
 
 .terraform.lock.hcl: ~/.terraform.d/credentials.tfrc.json versions.tf terraform.tfvars
-    rm -rf .terraform
 	terraform init
 	touch .terraform.lock.hcl
 
