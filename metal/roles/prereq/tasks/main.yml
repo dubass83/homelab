@@ -52,3 +52,7 @@
     path: /etc/sudoers
     validate: 'visudo -cf %s'
   when: ansible_distribution in ['CentOS',  'Rocky', 'Red Hat Enterprise Linux']
+
+- name: Set a hostname
+  hostname:
+    name: "{{ inventory_hostname }}"

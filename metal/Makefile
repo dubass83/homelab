@@ -21,5 +21,3 @@ console:
 	ansible-console \
 		--inventory inventories/homelab/hosts.ini
 
-vagrant:
-	vagrant up
