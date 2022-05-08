@@ -3,6 +3,7 @@
 
 KUBECONFIG = ../metal/kubeconfig.yaml
 KUBE_CONFIG_PATH = ../../metal/kubeconfig.yaml
+K8S_AUTH_KUBECONFIG = ../metal/kubeconfig.yaml
 
 default: apply
 
