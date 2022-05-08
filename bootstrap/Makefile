@@ -1,6 +1,9 @@
 .POSIX:
 .EXPORT_ALL_VARIABLES:
 
+colon := :
+$(colon) := :
+
 KUBECONFIG = $(shell pwd)/../metal/kubeconfig.yaml
 
 default: taint namespace argocd root
@@ -24,4 +27,4 @@ root:
 		./apply.sh
 
 taint:
-    kubectl taint nodes -l kubernetes.io/arch=arm64 arch=arm64:NoSchedule
+    kubectl taint nodes -l kubernetes.io/arch=arm64 arch=arm64$(:)NoSchedule
