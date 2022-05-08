@@ -3,7 +3,7 @@
 
 KUBECONFIG = $(shell pwd)/../metal/kubeconfig.yaml
 
-default: namespace argocd root
+default: taint namespace argocd root
 
 argocd/charts: argocd/Chart.yaml
 	cd argocd \
@@ -22,3 +22,6 @@ argocd: argocd/charts
 root:
 	cd root && \
 		./apply.sh
+
+taint:
+    kubectl taint nodes -l kubernetes.io/arch=arm64 arch=arm64:NoSchedule
