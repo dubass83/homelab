@@ -27,4 +27,4 @@ apply: .terraform.lock.hcl namespaces
 	terraform apply -auto-approve
 
 clean:
-    terraform destroy -auto-approve
+	terraform destroy -auto-approve
