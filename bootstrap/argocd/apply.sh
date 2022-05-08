@@ -1,6 +1,6 @@
 #!/bin/sh
 
-kubectl taint nodes -l kubernetes.io/arch=arm64 arch=arm64:NoSchedule
+kubectl taint nodes -l kubernetes.io/arch=arm64 arch=arm64:NoSchedule --overwrite
 
 helm template \
     --include-crds \
