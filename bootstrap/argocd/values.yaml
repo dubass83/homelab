@@ -59,7 +59,10 @@ argo-cd:
   repoServer:
     metrics: *metrics
   redis:
-    metrics: *metrics
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true
       image:
         repository: bitnami/redis-exporter 
   dex:
