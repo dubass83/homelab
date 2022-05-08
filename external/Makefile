@@ -2,7 +2,7 @@
 .EXPORT_ALL_VARIABLES:
 
 KUBECONFIG = ../metal/kubeconfig.yaml
-KUBE_CONFIG_PATH = ../metal/kubeconfig.yaml
+KUBE_CONFIG_PATH = ../../metal/kubeconfig.yaml
 
 default: apply
 
