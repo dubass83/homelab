@@ -2,11 +2,10 @@
 .EXPORT_ALL_VARIABLES:
 
 colon := :
-$(colon) := :
 
 KUBECONFIG = $(shell pwd)/../metal/kubeconfig.yaml
 
-default: taint namespace argocd root
+default: namespace argocd root
 
 argocd/charts: argocd/Chart.yaml
 	cd argocd \
@@ -24,7 +23,4 @@ argocd: argocd/charts
 .PHONY: root
 root:
 	cd root && \
-		./apply.sh
-
-taint:
-    kubectl taint nodes -l kubernetes.io/arch=arm64 arch=arm64$(:)NoSchedule
+		./apply.sh    

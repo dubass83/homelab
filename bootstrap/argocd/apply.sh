@@ -1,5 +1,7 @@
 #!/bin/sh
 
+kubectl taint nodes -l kubernetes.io/arch=arm64 arch=arm64:NoSchedule
+
 helm template \
     --include-crds \
     --namespace argocd \
