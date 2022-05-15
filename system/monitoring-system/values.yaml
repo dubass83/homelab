@@ -7,6 +7,7 @@ kube-prometheus-stack:
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-prod
         external-dns.alpha.kubernetes.io/target: homelab-tunnel.dubass83.xyz
+        external-dns.alpha.kubernetes.io/cloudflare-proxied: true
       hosts:
         - &host grafana.dubass83.xyz
       tls:
