@@ -13,6 +13,7 @@ hajimari:
       ingressClassName: nginx
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-prod
+        external-dns.alpha.kubernetes.io/target: homelab-tunnel.dubass83.xyz
       hosts:
         - host: &host home.dubass83.xyz
           paths:
