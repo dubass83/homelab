@@ -17,8 +17,8 @@ trow:
     enabled: false  # TODO https://github.com/ContainerSolutions/trow/issues/282
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-prod
-      nginx.ingress.kubernetes.io/proxy-body-size: '0'
       external-dns.alpha.kubernetes.io/target: homelab-tunnel.dubass83.xyz
+      nginx.ingress.kubernetes.io/proxy-body-size: '0'
     hosts:
       - host: &host registry.dubass83.xyz
         paths:
