@@ -10,7 +10,9 @@ cloudflared:
     ingress:
       - hostname: hello.dubass83.xyz
         service: hello_world
-      - service: http://ingress-nginx-controller.ingress-nginx.svc.cluster.local.:80
+      - service: https://ingress-nginx-controller.ingress-nginx.svc.cluster.local
+        originRequest:
+          noTLSVerify: true
   podMonitor:
     enabled: true
     metricsEndpoints:
