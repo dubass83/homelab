@@ -1,11 +1,16 @@
 cloudflared:
+  replicaCount: 2
+  image:
+    repository: cloudflare/cloudflared
+    tag: "2022.5.1"
   credentials:
     existingSecret: cloudflared-credentials
   config:
     tunnel: homelab
     ingress:
+      - hostname: hello.dubass83.xyz
+        service: hello_world
       - service: http://ingress-nginx-controller.ingress-nginx.svc.cluster.local.:80
-
   podMonitor:
     enabled: true
     metricsEndpoints:
