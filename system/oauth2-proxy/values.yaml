@@ -1,28 +1,29 @@
-config:
-  existingSecret: oauth2proxy
-
-extraArgs:
-  provider: github
-  whitelist-domain: .dubass83.xyz
-  cookie-domain: .dubass83.xyz
-  redirect-url: https://auth.dubass83.xyz/oauth2/callback
-
-ingress:
-  enabled: true
-  ingressClassName: nginx
-  path: /
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-prod
-    external-dns.alpha.kubernetes.io/target: homelab-tunnel.dubass83.xyz
-    external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
-  hosts:
-    - auth.dubass83.xyz
-  tls:
-    - secretName: oauth2proxy-general-tls
-      hosts:
-        - auth.dubass83.xyz
-
-metrics:
-  enabled: true
-  serviceMonitor:
+oauth2-proxy:
+  config:
+    existingSecret: oauth2proxy
+  
+  extraArgs:
+    provider: github
+    whitelist-domain: .dubass83.xyz
+    cookie-domain: .dubass83.xyz
+    redirect-url: https://auth.dubass83.xyz/oauth2/callback
+  
+  ingress:
     enabled: true
+    ingressClassName: nginx
+    path: /
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+      external-dns.alpha.kubernetes.io/target: homelab-tunnel.dubass83.xyz
+      external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+    hosts:
+      - auth.dubass83.xyz
+    tls:
+      - secretName: oauth2proxy-general-tls
+        hosts:
+          - auth.dubass83.xyz
+  
+  metrics:
+    enabled: true
+    serviceMonitor:
+      enabled: true
