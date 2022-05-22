@@ -12,6 +12,7 @@ oauth2-proxy:
     enabled: true
     ingressClassName: nginx
     path: /
+    pathType: Prefix
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-prod
       external-dns.alpha.kubernetes.io/target: homelab-tunnel.dubass83.xyz
