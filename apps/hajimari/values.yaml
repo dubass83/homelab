@@ -15,6 +15,8 @@ hajimari:
         cert-manager.io/cluster-issuer: letsencrypt-prod
         external-dns.alpha.kubernetes.io/target: homelab-tunnel.dubass83.xyz
         external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+        nginx.ingress.kubernetes.io/auth-url: 'https://oauth2-proxy.oauth2-proxy.svc.cluster.local/oauth2/auth'
+        nginx.ingress.kubernetes.io/auth-signin: 'https://auth.dubass83.xyz/oauth2/sign_in?rd=https://$host$request_uri'
       hosts:
         - host: &host home.dubass83.xyz
           paths:
