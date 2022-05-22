@@ -10,7 +10,7 @@ oauth2-proxy:
   
   ingress:
     enabled: true
-    ClassName: nginx
+    className: nginx
     path: /
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-prod
