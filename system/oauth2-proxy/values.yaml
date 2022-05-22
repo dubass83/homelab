@@ -6,7 +6,7 @@ oauth2-proxy:
     provider: github
     whitelist-domain: .dubass83.xyz
     cookie-domain: .dubass83.xyz
-    redirect-url: https://auth.dubass83.xyz/oauth2/callback
+    redirect-url: http://auth.dubass83.xyz/oauth2/callback
   
   ingress:
     enabled: true
