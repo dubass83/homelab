@@ -23,3 +23,12 @@
     path: /usr/sbin/ip6tables-legacy
     name: ip6tables
   register: ip6_legacy
+
+- name: Install packages required to make longhorn possible
+  package: name={{ item }} state=present allow_unauthenticated=yes
+  with_items:
+    - open-iscsi
+    - gawk
+    - curl
+    - util-linux
+    - nfs-common
